@@ -2,7 +2,6 @@ import React from "react";
 
 const PersonCard = props => {
     const {firstName, lastName, hairColor} = props;
-
     return (
     <div>
         <h1>
