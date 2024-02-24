@@ -4,7 +4,6 @@ const productController = require("../controllers/product.controller");
 //export a function that needs access to our app since it will add the HTTP methods and URL to it
 module.exports = (app) => {
     app.post("/api/products", productController.createProduct);
-    //Django equivalent path("/api/products", views.products)
     app.get("/api/products", productController.getAll);
     app.get("/api/products/:id", productController.getOne);// :id is a url parameter that will be added to req.params.id
 }

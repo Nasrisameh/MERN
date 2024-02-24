@@ -15,8 +15,8 @@ const Products = (props) => {
                 
             })
             .catch((err) => console.log(err));
-    }, []); //An empty dependency array means the useEffect is not listening for any state change. 
-                //It will run only on a complete render (e.g. initial render, refresh, or coming back to this component from another)
+    }, [setProductList]); 
+    ////////////////////////////////////////
     return (
     <div>
             <header>
@@ -25,8 +25,6 @@ const Products = (props) => {
             {
                 productList.map((product, index) => (
                     <div key={index} className="row mb-2 justify-content-center">
-                        {/* This is where :id in our app.js path gets its value... We can access this info via props */}
-                        {/* Note: when styling, the DOM read "Link" as an a tag */}
                         <Link to={`/product/${product._id}`} className="col-md-7 p-2 text-center">
                             {product.title}
                         </Link>
